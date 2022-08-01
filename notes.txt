@@ -1,0 +1,10 @@
+Logic for calc
+    each time number is pressed, += number into innerText of input class=calc-display
+    when an operator is pressed. innerText of calc-display is put into a variable starting with x
+    innerText of calc-display is cleared.
+    operator takes innerText of operator button pressed "    * / + -   "
+        repeat for Y.
+    
+    When equals is pressed. Call operator function, input x, y, operator 
+        return operator to innerText of calc-display.
+
