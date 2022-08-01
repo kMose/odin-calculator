@@ -35,11 +35,23 @@ function operate(x, y, operator){
 
 let calcDisplay = document.querySelector("#calc-display");
 
+// Event listeners for all number buttons
 document.querySelectorAll(".number-button").forEach(item => {
     item.addEventListener('click', () => {
         calcDisplay.value += item.dataset.number;
     })
 });
 
+// Event listeners for operator buttons
+document.querySelectorAll(".operators").forEach(item => {
+    item.addEventListener('click', () => {
+        calcDisplay.value += item.dataset.type;
+    })
+});
+
+// Clear display button
+document.querySelector("#clear").addEventListener("click", () => {
+    calcDisplay.value = "";
+});
 
 

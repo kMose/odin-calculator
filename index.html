@@ -12,7 +12,7 @@
     
     <div class="content">
         <div class="calculator"> 
-        <input id="calc-display" type="number"></input>
+        <input id="calc-display" type="text"></input>
         <div class="top-row">    
             <button data-number="7" class="number-button">7</button>
             <button data-number="8" class="number-button">8</button>
@@ -31,13 +31,15 @@
         <div class="equals-row">
             <button id="decimal">.</button>
             <button data-number="0" class="number-button">0</button>
-            <button id="operator-equals">=</button>
+            <button data-type="=" class="operators">=</button>
+            <button id="clear">Clear</button>
+
         </div>
         <div class="operator-column">
-            <button class="operators" id="operator-plus">+</button>
-            <button class="operators" id="operator-minus">-</button>
-            <button class="operators" id="operator-multiply">*</button>
-            <button class="operators" id="operator-divide">/</button>
+            <button data-type="+" class="operators" >+</button>
+            <button data-type="-" class="operators" >-</button>
+            <button data-type="*" class="operators" >*</button>
+            <button data-type="/" class="operators" >/</button>
 
         </div>
 
