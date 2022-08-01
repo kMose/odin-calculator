@@ -19,7 +19,6 @@ function divide(x, y){
 
 }
 
-
 function operate(x, y, operator){
 
     switch(operator){
@@ -31,11 +30,16 @@ function operate(x, y, operator){
             return multiply(x,y);    
         case '/':
             return divide(x,y);        
-
-
-
     }
-
-
 }
+
+let calcDisplay = document.querySelector("#calc-display");
+
+document.querySelectorAll(".number-button").forEach(item => {
+    item.addEventListener('click', () => {
+        calcDisplay.value += item.dataset.number;
+    })
+});
+
+
 

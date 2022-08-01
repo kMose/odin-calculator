@@ -8,3 +8,9 @@ Logic for calc
     When equals is pressed. Call operator function, input x, y, operator 
         return operator to innerText of calc-display.
 
+
+
+todo:
+    create event listeners for number buttons
+        queryselect all number buttons
+        give event listenter which innertext to input on click.
