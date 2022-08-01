@@ -67,8 +67,6 @@ document.querySelectorAll(".operators").forEach(item => {
                 }
             }
 
-        }
-
     );
 });
 
