@@ -23,7 +23,7 @@ function operate(x, y, operator){
 
     switch(operator){
         case '+':
-            return add(x,y);
+            return add(parseInt(x),parseInt(y));
         case '-':
             return subtract(x,y);
         case '*':
@@ -34,10 +34,16 @@ function operate(x, y, operator){
 }
 
 let calcDisplay = document.querySelector("#calc-display");
+let x = "";
+let y = "";
+let temp ="";
+let operator = "";
+let calculated = false;
 
 // Event listeners for all number buttons
 document.querySelectorAll(".number-button").forEach(item => {
     item.addEventListener('click', () => {
+        if(calculated) calcDisplay.value = "";
         calcDisplay.value += item.dataset.number;
     })
 });
@@ -45,13 +51,47 @@ document.querySelectorAll(".number-button").forEach(item => {
 // Event listeners for operator buttons
 document.querySelectorAll(".operators").forEach(item => {
     item.addEventListener('click', () => {
-        calcDisplay.value += item.dataset.type;
-    })
+            if(!x && !y){
+                x = calcDisplay.value;
+                operator = item.dataset.type;
+                calcDisplay.value = "";
+            } else if (x && !y && !calculated){
+                y = calcDisplay.value;
+                calcDisplay.value = operate(x,y, operator);
+                x = calcDisplay.value;
+                y = "";
+                operator = item.dataset.type;
+                calculated = true;
+            }else if (calculated){
+
+                }
+            }
+
+        }
+
+    );
 });
 
 // Clear display button
 document.querySelector("#clear").addEventListener("click", () => {
     calcDisplay.value = "";
+    x = "";
+    y = "";
+    operator = "";
+    calculated = false;
+});
+
+// Equals button
+
+document.querySelector("#equals-button").addEventListener("click", () => {
+            if (!calculated){
+                y = calcDisplay.value;
+                calcDisplay.value = operate(x,y, operator);
+                x = calcDisplay.value;
+                y = "";
+                calculated = true;
+            }
+
 });
 
 
