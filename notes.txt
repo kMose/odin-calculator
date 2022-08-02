@@ -1,2 +1,10 @@
-Todo:
-Add decimal functionality.
+Todo: 
+
+Backspace button.
+
+Round Decimals so they don't overflow the screen.
+    Figure out how to do that.
+
+Add keyboard support.
+    
+Add css styling and make everything look pretty

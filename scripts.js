@@ -92,7 +92,6 @@ document.querySelector("#clear").addEventListener("click", () => {
 
 document.querySelector("#equals-button").addEventListener("click", () => {     
         
-    
         if(operatorPressed){
             y = calcDisplay.value;
             calcDisplay.value = operate(x, y, operator)
@@ -109,13 +108,6 @@ document.querySelector("#equals-button").addEventListener("click", () => {
         }
 });
 
-// Updates the display div. If variable is unknown, display "?"
-function updateDisplay(x, y, result, operator){
-    xDisplay.textContent = x;
-    y === "" ? yDisplay.textContent = "?" : yDisplay.textContent = y;
-    operatorDisplay.textContent = operator;
-    result === "" ? outputDisplay.textContent = "?" : outputDisplay.textContent = result;
-}
 
 document.querySelector("#decimal").addEventListener("click", () => {
 
@@ -146,4 +138,12 @@ function clearAll(){
     equalsPressed = false;
     clearFlag = true;
     operatorPressed = false;
+}
+
+// Updates the display div. If variable is unknown, display "?"
+function updateDisplay(x, y, result, operator){
+    xDisplay.textContent = x;
+    y === "" ? yDisplay.textContent = "?" : yDisplay.textContent = y;
+    operatorDisplay.textContent = operator;
+    result === "" ? outputDisplay.textContent = "?" : outputDisplay.textContent = result;
 }
