@@ -54,6 +54,9 @@ document.querySelectorAll(".number-button").forEach(item => {
 // Event listeners for operator buttons
 document.querySelectorAll(".operators").forEach(item => {
     item.addEventListener('click', () => {
+        // Each time an operator key is pressed, check to see which variables have been
+        // entered. Calculate them if x and y are present. Afterwards be prepared for
+        // more operations with the "calculated" flag.
             if(calculated){
                 x = 69;
                 y = 69;
@@ -63,7 +66,7 @@ document.querySelectorAll(".operators").forEach(item => {
             }else if(!x && !y){
                 x = calcDisplay.value;
                 operator = item.dataset.type;
-                updateDisplay(x, y, calcDisplay.value, operator);
+                updateDisplay(x, y, "?", operator);
                 calcDisplay.value = "";
             } else if (x && !y){
                 y = calcDisplay.value;
@@ -90,18 +93,19 @@ document.querySelector("#clear").addEventListener("click", () => {
 // Equals button
 
 document.querySelector("#equals-button").addEventListener("click", () => {     
-        if (!calculated){
-        y = calcDisplay.value;
-        calcDisplay.value = operate(x,y, operator);
-        updateDisplay(x, y, calcDisplay.value, operator);
-        calculated = true;
+        if (!calculated && x){
+            calcDisplay.value == "" ? y = 0 : y = calcDisplay.value;
+            calcDisplay.value = operate(x,y, operator);
+            updateDisplay(x, y, calcDisplay.value, operator);
+            calculated = true;
         }
 
 });
 
+// Updates the display div. If variable is unknown, display "?"
 function updateDisplay(x, y, result, operator){
     xDisplay.textContent = x;
-    yDisplay.textContent = y;
+    y === "" ? yDisplay.textContent = "?" : yDisplay.textContent = y;
     operatorDisplay.textContent = operator;
-    outputDisplay.textContent = result;
+    result === "" ? outputDisplay.textContent = "?" : outputDisplay.textContent = result;
 }
