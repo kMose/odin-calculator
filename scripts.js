@@ -37,6 +37,7 @@ let y = "";
 let operator = "";
 let equalsPressed = false;
 let clearFlag = false;
+let decimalPressed = false
 
 xDisplay = document.querySelector("#x-display");
 yDisplay = document.querySelector("#y-display");
@@ -48,6 +49,7 @@ document.querySelectorAll(".number-button").forEach(item => {
     item.addEventListener('click', () => {
         if (clearFlag){
             calcDisplay.value = "";
+            decimalPressed = false;
             clearFlag = false;
         }
         calcDisplay.value += item.dataset.number;
@@ -107,3 +109,16 @@ function updateDisplay(x, y, result, operator){
     result === "" ? outputDisplay.textContent = "?" : outputDisplay.textContent = result;
 }
 
+document.querySelector("#decimal").addEventListener("click", () => {
+
+    for(let i = 0; i < calcDisplay.value.length; i++){
+        if (calcDisplay.value[i] === ".")
+            decimalPressed = true;
+    }
+
+    if(!decimalPressed){
+        calcDisplay.value += ".";
+        decimalPressed = true;
+    }
+
+});
