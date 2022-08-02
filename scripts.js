@@ -111,6 +111,11 @@ function updateDisplay(x, y, result, operator){
 
 document.querySelector("#decimal").addEventListener("click", () => {
 
+    if(calcDisplay.value = ""){
+        calcDisplay.value += ".";
+        decimalPressed = true;
+    }
+
     for(let i = 0; i < calcDisplay.value.length; i++){
         if (calcDisplay.value[i] === ".")
             decimalPressed = true;
