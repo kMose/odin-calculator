@@ -64,14 +64,17 @@ document.querySelectorAll(".operators").forEach(item => {
             if(!x){
                 x = calcDisplay.value;
                 clearFlag = true;
+                updateDisplay(x, "?", "?", operator)
             } else if(x && !y){
                 y = calcDisplay.value;
                 calcDisplay.value = operate(x, y, operator)
                 clearFlag = true;
+                updateDisplay(x, y, calcDisplay.value, operator)
                 x = calcDisplay.value;
                 y = "";
             }
         } else {
+            updateDisplay(x, y, "?", operator)
             equalsPressed = false;
         }
 
@@ -84,6 +87,7 @@ document.querySelector("#clear").addEventListener("click", () => {
     x = "";
     y = "";
     operator = "";
+    updateDisplay("?", "?", "?", "+");
     equalsPressed = false;
     clearFlag = true;
 });
@@ -94,11 +98,10 @@ document.querySelector("#equals-button").addEventListener("click", () => {
             y = calcDisplay.value;
             calcDisplay.value = operate(x, y, operator)
             clearFlag = true;
+            updateDisplay(x, y, calcDisplay.value, operator)
             x = calcDisplay.value;
             y = "";
             equalsPressed = true;
-
-
 });
 
 // Updates the display div. If variable is unknown, display "?"
@@ -116,6 +119,7 @@ document.querySelector("#decimal").addEventListener("click", () => {
         decimalPressed = true;
     }
 
+    // Checks to see if there is a decimal in the value string.
     for(let i = 0; i < calcDisplay.value.length; i++){
         if (calcDisplay.value[i] === ".")
             decimalPressed = true;
