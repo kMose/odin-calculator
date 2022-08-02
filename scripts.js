@@ -38,6 +38,11 @@ let temp ="";
 let operator = "";
 let calculated = false;
 
+xDisplay = document.querySelector("#x-display");
+yDisplay = document.querySelector("#y-display");
+operatorDisplay = document.querySelector("#operator-display");
+outputDisplay = document.querySelector("#output-display");
+
 // Event listeners for all number buttons
 document.querySelectorAll(".number-button").forEach(item => {
     item.addEventListener('click', () => {
@@ -49,16 +54,25 @@ document.querySelectorAll(".number-button").forEach(item => {
 // Event listeners for operator buttons
 document.querySelectorAll(".operators").forEach(item => {
     item.addEventListener('click', () => {
-            if(!x && !y){
+            if(calculated){
+                x = 69;
+                y = 69;
+                calcDisplay.value = 69;
+                operator = item.dataset.type;
+                updateDisplay(x, y, calcDisplay.value, operator);
+            }else if(!x && !y){
                 x = calcDisplay.value;
                 operator = item.dataset.type;
+                updateDisplay(x, y, calcDisplay.value, operator);
                 calcDisplay.value = "";
             } else if (x && !y){
                 y = calcDisplay.value;
+                operator = item.dataset.type;
                 calcDisplay.value = operate(x,y, operator);
+                updateDisplay(x, y, calcDisplay.value, operator);
                 x = calcDisplay.value;
                 y = "";
-                operator = item.dataset.type;
+                calculated = true;
             }
         }
     );
@@ -75,12 +89,19 @@ document.querySelector("#clear").addEventListener("click", () => {
 
 // Equals button
 
-document.querySelector("#equals-button").addEventListener("click", () => {
-        y = calcDisplay.value;        
+document.querySelector("#equals-button").addEventListener("click", () => {     
+        if (!calculated){
+        y = calcDisplay.value;
         calcDisplay.value = operate(x,y, operator);
-
-
+        updateDisplay(x, y, calcDisplay.value, operator);
+        calculated = true;
+        }
 
 });
 
-
+function updateDisplay(x, y, result, operator){
+    xDisplay.textContent = x;
+    yDisplay.textContent = y;
+    operatorDisplay.textContent = operator;
+    outputDisplay.textContent = result;
+}
