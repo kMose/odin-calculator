@@ -37,6 +37,7 @@ let y = "";
 let temp ="";
 let operator = "";
 let calculated = false;
+let clearedFlag = false;
 
 xDisplay = document.querySelector("#x-display");
 yDisplay = document.querySelector("#y-display");
@@ -46,7 +47,6 @@ outputDisplay = document.querySelector("#output-display");
 // Event listeners for all number buttons
 document.querySelectorAll(".number-button").forEach(item => {
     item.addEventListener('click', () => {
-        if(calculated) calcDisplay.value = "";
         calcDisplay.value += item.dataset.number;
     })
 });
@@ -58,11 +58,12 @@ document.querySelectorAll(".operators").forEach(item => {
         // entered. Calculate them if x and y are present. Afterwards be prepared for
         // more operations with the "calculated" flag.
             if(calculated){
-                x = 69;
-                y = 69;
-                calcDisplay.value = 69;
+                x = calcDisplay.value;
+                y = "";
                 operator = item.dataset.type;
                 updateDisplay(x, y, calcDisplay.value, operator);
+                clearedFlag = true;
+                
             }else if(!x && !y){
                 x = calcDisplay.value;
                 operator = item.dataset.type;

@@ -5,3 +5,6 @@ add a div on top that shows the numbers entered and the result.
 fix divide functionality.
 
 add check to see if number is the same when button pressed.
+
+
+It would be easier if the operators just tripped a flag that made the number buttons clear the prompt on enter
