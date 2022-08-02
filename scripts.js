@@ -6,11 +6,9 @@ function subtract(x, y){
     return x - y;
 }
 
-
 function multiply(x, y){
     return x*y;
 }
-
 
 function divide(x, y){
 
@@ -55,18 +53,14 @@ document.querySelectorAll(".operators").forEach(item => {
                 x = calcDisplay.value;
                 operator = item.dataset.type;
                 calcDisplay.value = "";
-            } else if (x && !y && !calculated){
+            } else if (x && !y){
                 y = calcDisplay.value;
                 calcDisplay.value = operate(x,y, operator);
                 x = calcDisplay.value;
                 y = "";
                 operator = item.dataset.type;
-                calculated = true;
-            }else if (calculated){
-
-                }
             }
-
+        }
     );
 });
 
@@ -82,13 +76,10 @@ document.querySelector("#clear").addEventListener("click", () => {
 // Equals button
 
 document.querySelector("#equals-button").addEventListener("click", () => {
-            if (!calculated){
-                y = calcDisplay.value;
-                calcDisplay.value = operate(x,y, operator);
-                x = calcDisplay.value;
-                y = "";
-                calculated = true;
-            }
+        y = calcDisplay.value;        
+        calcDisplay.value = operate(x,y, operator);
+
+
 
 });
 
