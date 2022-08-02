@@ -35,9 +35,10 @@ let calcDisplay = document.querySelector("#calc-display");
 let x = "";
 let y = "";
 let operator = "";
-let equalsPressed = false;
-let clearFlag = false;
-let decimalPressed = false
+let equalsPressed = false; // Used to allow another number entry after calculation.
+let clearFlag = false; // Used to clear prompt for a new number
+let decimalPressed = false // Used to stop multiple decimals.
+let operatorPressed = false; // Used in defending against EQUALS being undefined
 
 xDisplay = document.querySelector("#x-display");
 yDisplay = document.querySelector("#y-display");
@@ -60,6 +61,7 @@ document.querySelectorAll(".number-button").forEach(item => {
 document.querySelectorAll(".operators").forEach(item => {
     item.addEventListener('click', () => {
         operator = item.dataset.type;
+        operatorPressed = true;
         if(!equalsPressed){
             if(!x){
                 x = calcDisplay.value;
@@ -83,18 +85,15 @@ document.querySelectorAll(".operators").forEach(item => {
 
 // Clear display button AC
 document.querySelector("#clear").addEventListener("click", () => {
-    calcDisplay.value = "0";
-    x = "";
-    y = "";
-    operator = "";
-    updateDisplay("?", "?", "?", "+");
-    equalsPressed = false;
-    clearFlag = true;
+    clearAll();
 });
 
-// Equals button
+// Event Listener for Equals Button
 
 document.querySelector("#equals-button").addEventListener("click", () => {     
+        
+    
+        if(operatorPressed){
             y = calcDisplay.value;
             calcDisplay.value = operate(x, y, operator)
             clearFlag = true;
@@ -102,6 +101,12 @@ document.querySelector("#equals-button").addEventListener("click", () => {
             x = calcDisplay.value;
             y = "";
             equalsPressed = true;
+        }
+
+        if (isNaN(x) || isNaN(y)){
+            clearAll();
+            outputDisplay.textContent = "You can't divide by 0, you dingus!"
+        }
 });
 
 // Updates the display div. If variable is unknown, display "?"
@@ -131,3 +136,14 @@ document.querySelector("#decimal").addEventListener("click", () => {
     }
 
 });
+
+function clearAll(){
+    calcDisplay.value = "0";
+    x = "";
+    y = "";
+    operator = "";
+    updateDisplay("?", "?", "?", "+");
+    equalsPressed = false;
+    clearFlag = true;
+    operatorPressed = false;
+}
