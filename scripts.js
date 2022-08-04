@@ -61,25 +61,7 @@ document.querySelector("#clear").addEventListener("click", () => {
 });
 
 // Event Listener for Equals Button
-
-document.querySelector("#equals-button").addEventListener("click", () => {     
-        
-        if(operatorPressed){
-            y = calcDisplay.value;
-            calcDisplay.value = operate(x, y, operator)
-            clearFlag = true;
-            updateDisplay(x, y, calcDisplay.value, operator)
-            x = calcDisplay.value;
-            y = "";
-            equalsPressed = true;
-        }
-
-        if (isNaN(x) || isNaN(y)){
-            clearAll();
-            outputDisplay.textContent = "You can't divide by 0, you dingus!"
-        }
-});
-
+document.querySelector("#equals-button").addEventListener("click", () => equalsFunc());
 
 document.querySelector("#decimal").addEventListener("click", () => {
 
@@ -120,7 +102,7 @@ function clearAll(){
 // Updates the display div. If variable is unknown, display "?"
 function updateDisplay(x, y, result, operator){
     xDisplay.textContent = x;
-    y === "" ? yDisplay.textContent = "?" : yDisplay.textContent = y;
+}" : yDisplay.textContent = y;
     operatorDisplay.textContent = operator;
     result === "" ? outputDisplay.textContent = "?" : outputDisplay.textContent = result;
 }
@@ -156,8 +138,21 @@ function numberFunc(item){
     calcDisplay.value += item.dataset.number;
 }
 
-function equalsFunc(){
+function equalsFunc(){  
+    if(operatorPressed){
+        y = calcDisplay.value;
+        calcDisplay.value = operate(x, y, operator)
+        clearFlag = true;
+        updateDisplay(x, y, calcDisplay.value, operator)
+        x = calcDisplay.value;
+        y = "";
+        equalsPressed = true;
+    }
 
+    if (isNaN(x) || isNaN(y)){
+        clearAll();
+        outputDisplay.textContent = "You can't divide by 0, you dingus!"
+    }
 }
 
 function decimalFunc(){
