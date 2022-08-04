@@ -47,14 +47,7 @@ outputDisplay = document.querySelector("#output-display");
 
 // Event listeners for all number buttons
 document.querySelectorAll(".number-button").forEach(item => {
-    item.addEventListener('click', () => {
-        if (clearFlag){
-            calcDisplay.value = "";
-            decimalPressed = false;
-            clearFlag = false;
-        }
-        calcDisplay.value += item.dataset.number;
-    });
+    item.addEventListener('click', () => numberFunc(item));
 });
 
 // Event listeners for operator buttons
@@ -154,8 +147,13 @@ function operatorFunc(item){
     }
 }
 
-function numberFunc(){
-
+function numberFunc(item){
+    if (clearFlag){
+        calcDisplay.value = "";
+        decimalPressed = false;
+        clearFlag = false;
+    }
+    calcDisplay.value += item.dataset.number;
 }
 
 function equalsFunc(){
