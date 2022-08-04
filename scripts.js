@@ -129,6 +129,11 @@ document.querySelector("#decimal").addEventListener("click", () => {
 
 });
 
+// Backspace button removes the last number from the display.
+document.querySelector("#backsp").addEventListener("click", () => {
+    calcDisplay.value = calcDisplay.value.slice(0, -1);
+});
+
 function clearAll(){
     calcDisplay.value = "0";
     x = "";
@@ -146,4 +151,13 @@ function updateDisplay(x, y, result, operator){
     y === "" ? yDisplay.textContent = "?" : yDisplay.textContent = y;
     operatorDisplay.textContent = operator;
     result === "" ? outputDisplay.textContent = "?" : outputDisplay.textContent = result;
+}
+
+function operatorFunc(){
+
+}
+
+
+function numberFunc(){
+    
 }

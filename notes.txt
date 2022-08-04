@@ -1,6 +1,8 @@
 Todo: 
 
-Backspace button.
+
+
+After equals is hit
 
 Round Decimals so they don't overflow the screen.
     Figure out how to do that.
@@ -8,5 +10,3 @@ Round Decimals so they don't overflow the screen.
 Add keyboard support.
     
 Add css styling and make everything look pretty
-
------decimals are erasing first entry-------
