@@ -21,7 +21,7 @@ function operate(x, y, operator){
 
     switch(operator){
         case '+':
-            return add(parseInt(x),parseInt(y));
+            return add(parseFloat(x),parseFloat(y));
         case '-':
             return subtract(x,y);
         case '*':
@@ -111,7 +111,7 @@ document.querySelector("#equals-button").addEventListener("click", () => {
 
 document.querySelector("#decimal").addEventListener("click", () => {
 
-    if(calcDisplay.value = ""){
+    if(calcDisplay.value == ""){
         calcDisplay.value += ".";
         decimalPressed = true;
     }
