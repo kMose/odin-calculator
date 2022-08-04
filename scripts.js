@@ -11,10 +11,8 @@ function multiply(x, y){
 }
 
 function divide(x, y){
-
     if (x == 0 || y == 0) return "You can't divide by zero, you dingus!";
     return x / y;
-
 }
 
 function operate(x, y, operator){
@@ -63,25 +61,9 @@ document.querySelector("#clear").addEventListener("click", () => {
 // Event Listener for Equals Button
 document.querySelector("#equals-button").addEventListener("click", () => equalsFunc());
 
-document.querySelector("#decimal").addEventListener("click", () => {
 
-    if(calcDisplay.value == ""){
-        calcDisplay.value += ".";
-        decimalPressed = true;
-    }
-
-    // Checks to see if there is a decimal in the value string.
-    for(let i = 0; i < calcDisplay.value.length; i++){
-        if (calcDisplay.value[i] === ".")
-            decimalPressed = true;
-    }
-
-    if(!decimalPressed){
-        calcDisplay.value += ".";
-        decimalPressed = true;
-    }
-
-});
+// Event Listener for Decimal Button
+document.querySelector("#decimal").addEventListener("click", () => decimalFunc());
 
 // Backspace button removes the last number from the display.
 document.querySelector("#backsp").addEventListener("click", () => {
@@ -102,7 +84,7 @@ function clearAll(){
 // Updates the display div. If variable is unknown, display "?"
 function updateDisplay(x, y, result, operator){
     xDisplay.textContent = x;
-}" : yDisplay.textContent = y;
+    y === "" ? yDisplay.textContent = "?" : yDisplay.textContent = y;
     operatorDisplay.textContent = operator;
     result === "" ? outputDisplay.textContent = "?" : outputDisplay.textContent = result;
 }
@@ -156,7 +138,21 @@ function equalsFunc(){
 }
 
 function decimalFunc(){
+    if(calcDisplay.value == ""){
+        calcDisplay.value += ".";
+        decimalPressed = true;
+    }
 
+    // Checks to see if there is a decimal in the value string.
+    for(let i = 0; i < calcDisplay.value.length; i++){
+        if (calcDisplay.value[i] === ".")
+            decimalPressed = true;
+    }
+
+    if(!decimalPressed){
+        calcDisplay.value += ".";
+        decimalPressed = true;
+    }
 }
 
 function backspaceFunc(){
