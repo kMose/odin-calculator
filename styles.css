@@ -3,6 +3,7 @@
 .number-column{
     display: flex;
     flex-direction: column;
+    flex: 1 1 60%;
 }
 
 .content{
@@ -16,32 +17,37 @@
     display: flex;
     flex-direction: column;
     flex: auto;
+    height: 250px;
+    width: 250px;
     border: 1px solid black;
 }
 
 button{
-    display: flex;
-    flex: auto;
-    justify-content: center;
+    box-sizing: border-box;
+    flex: 1 1 100%;
+    text-align: center;
+    font-size: 1.2rem;
 }
 
 .number-column > div{
     display:flex;
     flex-direction: row;
-    flex: 1;
+    flex: 1 1 100%;
 } 
 
 .operator-column{
     display: flex;
     flex-direction: column;
+    flex: 1 1;
 }
+
+.operator-column button{
+    font-size: 1.3rem;
+}
+
 
 .button-rows{
     display: flex;
     flex-direction: row;
-    width: 100%;
-}
-
-#plus-minus{
-    width: 22px;
+    flex: 1 1 100%;
 }
