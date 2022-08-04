@@ -66,9 +66,7 @@ document.querySelector("#equals-button").addEventListener("click", () => equalsF
 document.querySelector("#decimal").addEventListener("click", () => decimalFunc());
 
 // Backspace button removes the last number from the display.
-document.querySelector("#backsp").addEventListener("click", () => {
-    calcDisplay.value = calcDisplay.value.slice(0, -1);
-});
+document.querySelector("#backsp").addEventListener("click", () => backspaceFunc());
 
 function clearAll(){
     calcDisplay.value = "0";
@@ -156,5 +154,5 @@ function decimalFunc(){
 }
 
 function backspaceFunc(){
-
+    calcDisplay.value = calcDisplay.value.slice(0, -1);
 }
