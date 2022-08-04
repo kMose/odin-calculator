@@ -61,7 +61,6 @@ document.querySelector("#clear").addEventListener("click", () => {
 // Event Listener for Equals Button
 document.querySelector("#equals-button").addEventListener("click", () => equalsFunc());
 
-
 // Event Listener for Decimal Button
 document.querySelector("#decimal").addEventListener("click", () => decimalFunc());
 

@@ -9,10 +9,8 @@
     <script src="scripts.js" defer></script>
 </head>
 <body>
-    
     <div class="content">
-        <div class="calculator"> 
-        <input id="calc-display" type="text"></input>
+        
         <div class="history-display">
             <span id="x-display">?</span>
             <span id="operator-display">+</span>
@@ -20,40 +18,51 @@
             <span> = </span>
             <span id="output-display">?</span>
         </div>
-        <div class="erase-row">
-            <button id="backsp">Backsp</button>
-            <button id="clear">Clear</button>
-        </div>
+        
+        <div class="calculator"> 
+            
+            <input id="calc-display" type="text"></input>
+            
+            <div class="button-rows">
+                <div class="number-column">
+                    <div class="erase-row">
+                        <button id="backsp">Backsp</button>
+                        <button id="clear">Clear</button>
+                    </div>
 
-        <div class="top-row">    
-            <button data-number="7" class="number-button">7</button>
-            <button data-number="8" class="number-button">8</button>
-            <button data-number="9" class="number-button">9</button>
-        </div>
+                    <div class="top-row">    
+                        <button data-number="7" class="number-button">7</button>
+                        <button data-number="8" class="number-button">8</button>
+                        <button data-number="9" class="number-button">9</button>
+                    </div>
 
-        <div class="middle-row">    
-            <button data-number="4" class="number-button">4</button>
-            <button data-number="5" class="number-button">5</button>
-            <button data-number="6" class="number-button">6</button>
-        </div>
+                    <div class="middle-row">    
+                        <button data-number="4" class="number-button">4</button>
+                        <button data-number="5" class="number-button">5</button>
+                        <button data-number="6" class="number-button">6</button>
+                    </div>
 
-        <div class="bottom-row">
-            <button data-number="1" class="number-button">1</button>
-            <button data-number="2" class="number-button">2</button>
-            <button data-number="3" class="number-button">3</button>
-        </div>
+                    <div class="bottom-row">
+                        <button data-number="1" class="number-button">1</button>
+                        <button data-number="2" class="number-button">2</button>
+                        <button data-number="3" class="number-button">3</button>
+                    </div>
 
-        <div class="equals-row">
-            <button id="decimal">.</button>
-            <button data-number="0" class="number-button">0</button>
-            <button id="equals-button">=</button>
-        </div>
+                    <div class="zero-row">
+                        <button id="plus-minus">+/-</button>
+                        <button data-number="0" class="number-button">0</button>
+                        <button id="decimal">.</button>    
+                    </div>
+                </div>
 
-        <div class="operator-column">
-            <button data-type="+" class="operators" >+</button>
-            <button data-type="-" class="operators" >-</button>
-            <button data-type="*" class="operators" >*</button>
-            <button data-type="/" class="operators" >/</button>
+                <div class="operator-column">
+                    <button data-type="+" class="operators" >+</button>
+                    <button data-type="-" class="operators" >-</button>
+                    <button data-type="*" class="operators" >*</button>
+                    <button data-type="/" class="operators" >/</button>
+                    <button id="equals-button">=</button>
+                </div>
+            </div>
         </div>
     </div>
 

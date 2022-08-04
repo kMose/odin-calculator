@@ -3,14 +3,17 @@ Todo:
 
 
 
-Round Decimals so they don't overflow the screen.
-    Figure out how to do that.
 
-Add keyboard support.
-    
+
+
 Add css styling and make everything look pretty
 
 
-
 ---- later polish ----
+Round Decimals so they don't overflow the screen.
+    Figure out how to do that.
+
 After equals is hit, the next number press should clear the prompt for a new calculation
+
+Add keyboard support.
+    

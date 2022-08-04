@@ -1,0 +1,47 @@
+
+
+.number-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator{
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+    border: 1px solid black;
+}
+
+button{
+    display: flex;
+    flex: auto;
+    justify-content: center;
+}
+
+.number-column > div{
+    display:flex;
+    flex-direction: row;
+    flex: 1;
+} 
+
+.operator-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.button-rows{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+#plus-minus{
+    width: 22px;
+}
