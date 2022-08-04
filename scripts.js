@@ -68,7 +68,7 @@ document.querySelector("#decimal").addEventListener("click", () => decimalFunc()
 document.querySelector("#backsp").addEventListener("click", () => backspaceFunc());
 
 function clearAll(){
-    calcDisplay.value = "0";
+    calcDisplay.textContent = "0";
     x = "";
     y = "";
     operator = "";
@@ -91,15 +91,15 @@ function operatorFunc(item){
     operatorPressed = true;
     if(!equalsPressed){
         if(!x){
-            x = calcDisplay.value;
+            x = calcDisplay.textContent;
             clearFlag = true;
             updateDisplay(x, "?", "?", operator)
         } else if(x && !y){
-            y = calcDisplay.value;
-            calcDisplay.value = operate(x, y, operator)
+            y = calcDisplay.textContent;
+            calcDisplay.textContent = operate(x, y, operator)
             clearFlag = true;
-            updateDisplay(x, y, calcDisplay.value, operator)
-            x = calcDisplay.value;
+            updateDisplay(x, y, calcDisplay.textContent, operator)
+            x = calcDisplay.textContent;
             y = "";
         }
     } else {
@@ -110,20 +110,20 @@ function operatorFunc(item){
 
 function numberFunc(item){
     if (clearFlag){
-        calcDisplay.value = "";
+        calcDisplay.textContent = "";
         decimalPressed = false;
         clearFlag = false;
     }
-    calcDisplay.value += item.dataset.number;
+    calcDisplay.textContent += item.dataset.number;
 }
 
 function equalsFunc(){  
     if(operatorPressed){
-        y = calcDisplay.value;
-        calcDisplay.value = operate(x, y, operator)
+        y = calcDisplay.textContent;
+        calcDisplay.textContent = operate(x, y, operator)
         clearFlag = true;
-        updateDisplay(x, y, calcDisplay.value, operator)
-        x = calcDisplay.value;
+        updateDisplay(x, y, calcDisplay.textContent, operator)
+        x = calcDisplay.textContent;
         y = "";
         equalsPressed = true;
     }
@@ -135,23 +135,23 @@ function equalsFunc(){
 }
 
 function decimalFunc(){
-    if(calcDisplay.value == ""){
-        calcDisplay.value += ".";
+    if(calcDisplay.textContent == ""){
+        calcDisplay.textContent += ".";
         decimalPressed = true;
     }
 
     // Checks to see if there is a decimal in the value string.
-    for(let i = 0; i < calcDisplay.value.length; i++){
-        if (calcDisplay.value[i] === ".")
+    for(let i = 0; i < calcDisplay.textContent.length; i++){
+        if (calcDisplay.textContent[i] === ".")
             decimalPressed = true;
     }
 
     if(!decimalPressed){
-        calcDisplay.value += ".";
+        calcDisplay.textContent += ".";
         decimalPressed = true;
     }
 }
 
 function backspaceFunc(){
-    calcDisplay.value = calcDisplay.value.slice(0, -1);
+    calcDisplay.textContent = calcDisplay.textContent.slice(0, -1);
 }

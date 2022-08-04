@@ -1,4 +1,18 @@
 
+#calc-display{
+    text-align: right;
+    box-sizing: border-box;
+    border: 2px solid black;
+    height: 20%;
+    padding-right:5px;
+    font-size: 2rem;
+}
+
+.history-display{
+    display: flex;
+    justify-content: flex-end;
+    color: darkcyan;
+}
 
 .number-column{
     display: flex;
@@ -17,9 +31,11 @@
     display: flex;
     flex-direction: column;
     flex: auto;
+    justify-content: center;
     height: 250px;
     width: 250px;
-    border: 1px solid black;
+    margin-top: 15%;
+    
 }
 
 .erase-row button{
@@ -55,6 +71,7 @@ button{
     display: flex;
     flex-direction: row;
     flex: 1 1 100%;
+    border: 2px solid black;
 }
 
 .top-row button,
