@@ -22,6 +22,10 @@
     border: 1px solid black;
 }
 
+.erase-row button{
+    background-color: darkgrey;
+}
+
 button{
     box-sizing: border-box;
     flex: 1 1 100%;
@@ -43,6 +47,7 @@ button{
 
 .operator-column button{
     font-size: 1.3rem;
+    background-color: lightgray;
 }
 
 
@@ -50,4 +55,11 @@ button{
     display: flex;
     flex-direction: row;
     flex: 1 1 100%;
+}
+
+.top-row button,
+.middle-row button,
+.bottom-row button,
+.zero-row button{
+    background-color: lightsalmon;
 }
