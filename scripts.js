@@ -157,7 +157,18 @@ function operatorFunc(){
 
 }
 
-
 function numberFunc(){
-    
+
+}
+
+function equalsFunc(){
+
+}
+
+function decimalFunc(){
+
+}
+
+function backspaceFunc(){
+
 }
