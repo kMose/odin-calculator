@@ -59,28 +59,7 @@ document.querySelectorAll(".number-button").forEach(item => {
 
 // Event listeners for operator buttons
 document.querySelectorAll(".operators").forEach(item => {
-    item.addEventListener('click', () => {
-        operator = item.dataset.type;
-        operatorPressed = true;
-        if(!equalsPressed){
-            if(!x){
-                x = calcDisplay.value;
-                clearFlag = true;
-                updateDisplay(x, "?", "?", operator)
-            } else if(x && !y){
-                y = calcDisplay.value;
-                calcDisplay.value = operate(x, y, operator)
-                clearFlag = true;
-                updateDisplay(x, y, calcDisplay.value, operator)
-                x = calcDisplay.value;
-                y = "";
-            }
-        } else {
-            updateDisplay(x, y, "?", operator)
-            equalsPressed = false;
-        }
-
-    });
+    item.addEventListener('click', () => operatorFunc(item));
 });
 
 // Clear display button AC
@@ -153,8 +132,26 @@ function updateDisplay(x, y, result, operator){
     result === "" ? outputDisplay.textContent = "?" : outputDisplay.textContent = result;
 }
 
-function operatorFunc(){
-
+function operatorFunc(item){
+    operator = item.dataset.type;
+    operatorPressed = true;
+    if(!equalsPressed){
+        if(!x){
+            x = calcDisplay.value;
+            clearFlag = true;
+            updateDisplay(x, "?", "?", operator)
+        } else if(x && !y){
+            y = calcDisplay.value;
+            calcDisplay.value = operate(x, y, operator)
+            clearFlag = true;
+            updateDisplay(x, y, calcDisplay.value, operator)
+            x = calcDisplay.value;
+            y = "";
+        }
+    } else {
+        updateDisplay(x, y, "?", operator)
+        equalsPressed = false;
+    }
 }
 
 function numberFunc(){
