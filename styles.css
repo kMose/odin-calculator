@@ -5,7 +5,7 @@
     border: 1px solid black;
     height: 25%;
     padding-right:5px;
-    font-size: 2.5rem;
+    font-size: 2rem;
     overflow: auto;
 
 }
@@ -38,8 +38,8 @@
     flex-direction: column;
     flex: auto;
     justify-content: center;
-    height: 500px;
-    width: 500px;
+    height: 400px;
+    width: 400px;
     margin-top: 10%;
     
 }
@@ -68,7 +68,7 @@ button{
     box-sizing: border-box;
     flex: 1 1 100%;
     text-align: center;
-    font-size: 2rem;
+    font-size: 1.75rem;
 }
 
 .number-column > div{
