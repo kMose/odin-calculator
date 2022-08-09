@@ -42,6 +42,12 @@ xDisplay = document.querySelector("#x-display");
 yDisplay = document.querySelector("#y-display");
 operatorDisplay = document.querySelector("#operator-display");
 outputDisplay = document.querySelector("#output-display");
+equalsButton = document.querySelector("#equals-button");
+backspaceButton = document.querySelector("#backsp");
+clearButton = document.querySelector("#clear");
+decimalButton = document.querySelector("#decimal");
+plusminusButton = document.querySelector("#plus-minus");
+
 
 // Event listeners for all number buttons
 document.querySelectorAll(".number-button").forEach(item => {
@@ -54,27 +60,38 @@ document.querySelectorAll(".number-button").forEach(item => {
 // Event listeners for operator buttons
 document.querySelectorAll(".operators").forEach(item => {
     item.addEventListener('click', () => operatorFunc(item));
+    //Color change on click
+    item.addEventListener('click', () => clickFeedback(item))
     
 });
 
-// Clear display button AC
-document.querySelector("#clear").addEventListener("click", () => {
-    clearAll();
-});
+
 
 // Event Listener for Equals Button
 document.querySelector("#equals-button").addEventListener("click", () => equalsFunc());
+equalsButton.addEventListener('click', () => clickFeedback(equalsButton))
 
 // Event Listener for Decimal Button
 document.querySelector("#decimal").addEventListener("click", () => decimalFunc());
+decimalButton.addEventListener('click', () => clickFeedback(decimalButton));
 
 // Event Listener for plusMinus
 document.querySelector("#plus-minus").addEventListener("click", () => {
     calcDisplay.textContent = calcDisplay.textContent * -1;
 })
+plusminusButton.addEventListener('click', () => clickFeedback(plusminusButton));
 
 // Backspace button removes the last number from the display.
 document.querySelector("#backsp").addEventListener("click", () => backspaceFunc());
+backspaceButton.addEventListener('click', () => clickFeedback(backspaceButton));
+
+
+// Clear display button AC
+document.querySelector("#clear").addEventListener("click", () => {
+    clearAll();
+});
+clearButton.addEventListener('click', () => clickFeedback(clearButton));
+
 
 
 

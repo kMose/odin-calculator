@@ -1,5 +1,14 @@
 Todo: 
 
+add check if +/- is clicked on zero.
+
++/-
+.
+backsp
+clear
+
+we need css .clicked for the above.
+
 
 Add css hovers to buttons and color change on click
     might need to do this in the form of a classlist.add / classlist.remove with a timer
