@@ -11,7 +11,7 @@ function multiply(x, y){
 }
 
 function divide(x, y){
-    if (x == 0 || y == 0) return "You can't divide by zero, you dingus!";
+    if (x == 0 || y == 0) return "You can't divide by 0, you dingus!";
     return x / y;
 }
 
@@ -47,6 +47,7 @@ backspaceButton = document.querySelector("#backsp");
 clearButton = document.querySelector("#clear");
 decimalButton = document.querySelector("#decimal");
 plusminusButton = document.querySelector("#plus-minus");
+errorDisplay =  document.querySelector(".error-display");
 
 
 // Event listeners for all number buttons
@@ -159,9 +160,15 @@ function equalsFunc(){
         equalsPressed = true;
     }
 
+    // Divide by zero check
     if (isNaN(x) || isNaN(y)){
         clearAll();
-        outputDisplay.textContent = "You can't divide by 0, you dingus!"
+        errorDisplay.style.fontSize = "2rem"
+        errorDisplay.textContent = "You can't divide by 0, you dingus!"
+        setTimeout(()=> { errorDisplay.textContent = "Shame on you!"; }, 3000)
+        setTimeout(()=> { 
+                        errorDisplay.style.fontSize = "1rem";
+                        errorDisplay.textContent = "Odin Project Calculator by kmose.";  }, 9000)
     }
 }
 
