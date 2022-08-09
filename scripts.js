@@ -77,7 +77,9 @@ decimalButton.addEventListener('click', () => clickFeedback(decimalButton));
 
 // Event Listener for plusMinus
 document.querySelector("#plus-minus").addEventListener("click", () => {
-    calcDisplay.textContent = calcDisplay.textContent * -1;
+    if (calcDisplay.textContent != "0" && calcDisplay.textContent != ""){
+        calcDisplay.textContent = calcDisplay.textContent * -1;
+    }
 })
 plusminusButton.addEventListener('click', () => clickFeedback(plusminusButton));
 

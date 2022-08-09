@@ -1,13 +1,9 @@
 Todo: 
 
-add check if +/- is clicked on zero.
 
-+/-
-.
-backsp
-clear
 
-we need css .clicked for the above.
+make it so divide by zero message doesnt resize everything else
+    make the history span its own flexbox.
 
 
 Add css hovers to buttons and color change on click
