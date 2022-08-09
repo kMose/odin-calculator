@@ -2,8 +2,8 @@
 #calc-display{
     text-align: right;
     box-sizing: border-box;
-    border: 2px solid black;
-    height: 20%;
+    border: 1px solid black;
+    height: 23%;
     padding-right:5px;
     font-size: 2rem;
 }

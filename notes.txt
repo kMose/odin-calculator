@@ -1,12 +1,10 @@
 Todo: 
+
+
+
 add functionality to +/- button (multiply by -1)
     add listener for that button.
 
-
-change colors of 
-
-
-Add css styling and make everything look pretty
 
 
 ---- later polish ----
