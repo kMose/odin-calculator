@@ -2,24 +2,20 @@ Todo:
 
 
 
-make it so divide by zero message doesnt resize everything else
-    make the history span its own flexbox.
-
-
-Add css hovers to buttons and color change on click
-    might need to do this in the form of a classlist.add / classlist.remove with a timer
-
 
 Make it so calculator doesnt go out of bounds.
 You cant divide by zero error goes out of bounds. Change font size.
+
+Add css hovers to buttons and color change on click
+    might need to do this in the form of a classlist.add / classlist.remove with a timer
 
 
 
 
 
 ---- later polish ----
-Round Decimals so they don't overflow the screen.
-    Figure out how to do that.
+
++/- doesnt apply to 2nd operation
 
 Add keyboard support.
     

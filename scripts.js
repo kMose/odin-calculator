@@ -95,10 +95,6 @@ document.querySelector("#clear").addEventListener("click", () => {
 });
 clearButton.addEventListener('click', () => clickFeedback(clearButton));
 
-
-
-
-
 function clearAll(){
     calcDisplay.textContent = "0";
     x = "";

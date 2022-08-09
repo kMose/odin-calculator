@@ -3,15 +3,19 @@
     text-align: right;
     box-sizing: border-box;
     border: 1px solid black;
-    height: 23%;
+    height: 25%;
     padding-right:5px;
     font-size: 2rem;
+    overflow: auto;
+
 }
 
 .history-display{
     display: flex;
     justify-content: flex-end;
     color: darkcyan;
+    overflow: hidden;
+    height: 10%;
 }
 
 
