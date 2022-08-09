@@ -46,14 +46,15 @@ outputDisplay = document.querySelector("#output-display");
 // Event listeners for all number buttons
 document.querySelectorAll(".number-button").forEach(item => {
     item.addEventListener('click', () => numberFunc(item));
-    item.addEventListener('click', (item) => {
-        item.target.classList.add("clicked");
-    })
+    
+    //Color change on click
+    item.addEventListener('click', () => clickFeedback(item))
 });
 
 // Event listeners for operator buttons
 document.querySelectorAll(".operators").forEach(item => {
     item.addEventListener('click', () => operatorFunc(item));
+    
 });
 
 // Clear display button AC
@@ -165,4 +166,10 @@ function decimalFunc(){
 
 function backspaceFunc(){
     calcDisplay.textContent = calcDisplay.textContent.slice(0, -1);
+}
+
+//Color change on click
+function clickFeedback(item){
+    item.classList.add("clicked");
+    setTimeout(()=> { item.classList.remove("clicked"); }, 75);
 }
