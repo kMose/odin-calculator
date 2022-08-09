@@ -14,6 +14,8 @@
     color: darkcyan;
 }
 
+
+
 .number-column{
     display: flex;
     flex-direction: column;
@@ -40,6 +42,10 @@
 
 .erase-row button{
     background-color: darkgrey;
+}
+
+.number-button.clicked{
+    background-color: hsl(15, 72%, 50%);
 }
 
 button{
@@ -74,9 +80,16 @@ button{
     border: 2px solid black;
 }
 
+
+
+
 .top-row button,
 .middle-row button,
 .bottom-row button,
 .zero-row button{
     background-color: lightsalmon;
 }
+
+
+
+

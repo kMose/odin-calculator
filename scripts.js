@@ -46,6 +46,9 @@ outputDisplay = document.querySelector("#output-display");
 // Event listeners for all number buttons
 document.querySelectorAll(".number-button").forEach(item => {
     item.addEventListener('click', () => numberFunc(item));
+    item.addEventListener('click', (item) => {
+        item.target.classList.add("clicked");
+    })
 });
 
 // Event listeners for operator buttons
