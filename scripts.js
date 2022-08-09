@@ -64,8 +64,16 @@ document.querySelector("#equals-button").addEventListener("click", () => equalsF
 // Event Listener for Decimal Button
 document.querySelector("#decimal").addEventListener("click", () => decimalFunc());
 
+// Event Listener for plusMinus
+document.querySelector("#plus-minus").addEventListener("click", () => {
+    calcDisplay.textContent = calcDisplay.textContent * -1;
+})
+
 // Backspace button removes the last number from the display.
 document.querySelector("#backsp").addEventListener("click", () => backspaceFunc());
+
+
+
 
 function clearAll(){
     calcDisplay.textContent = "0";

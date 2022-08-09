@@ -1,9 +1,17 @@
 Todo: 
 
-
-
 add functionality to +/- button (multiply by -1)
     add listener for that button.
+
+
+Add css hovers to buttons and color change on click
+    might need to do this in the form of a classlist.add / classlist.remove with a timer
+    
+
+Make it so calculator doesnt go out of bounds.
+You cant divide by zero error goes out of bounds. Change font size.
+
+
 
 
 
